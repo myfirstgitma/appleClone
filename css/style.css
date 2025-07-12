@@ -1,4 +1,4 @@
- /* Reset some defaults */
+/* Reset some defaults */
 * {
   margin: 0;
   padding: 0;
@@ -110,9 +110,30 @@ body {
     gap: 10px;
   }
 }
+/* end of header css */
+
+/* start of First section banner (16-inch MacBook Pro) css
+
+	start of Second section banner (iPhone 11 Pro) git css
+
+	start of Third section banner (iPhone 11) css
+
+	start of Fourth section – left part (Watch – Series 5)css
+
+	start of Fourth section – right part (Card is here)css
+
+	start of Fifth section – left part (tv+) css
+
+	start of Fifth section – right part (AirPods Pro) cs
+
+	start of Sixth section – left part (MacBook Pro) css
+
+	start of Sixth section – right part (The new iPad) css*/
 
 
-/* footerstyle  */
+
+
+/* start footerstyle  */
 /* General styles */
 .footer-wrapper {
   background-color: #f5f5f7;
@@ -123,7 +144,7 @@ body {
 }
 
 .footer-wrapper a {
-  color:#515154;;
+  color: #515154;
   text-decoration: none;
 }
 
@@ -224,6 +245,3 @@ body {
     justify-content: flex-end;
   }
 }
-
-
- 
