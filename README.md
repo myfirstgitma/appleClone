@@ -1,2 +1,2 @@
 # appleClone
-Apple website clone - Group collaboration practice project
+Apple website clone - Group collaboration practice project.
