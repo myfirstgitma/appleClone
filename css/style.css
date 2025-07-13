@@ -85,31 +85,7 @@ body {
 }
 
 /* Responsive: Hide menu links and show toggle button on small screens */
-@media (max-width: 768px) {
-  .apple-menu-toggle {
-    display: block;
-  }
 
-  .apple-nav-links.left {
-    display: none;
-    position: absolute;
-    top: 44px;
-    left: 0;
-    right: 0;
-    background-color: #161617cc;
-    flex-direction: column;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .apple-nav-links.left.open {
-    display: flex;
-  }
-
-  .apple-nav-links.right {
-    gap: 10px;
-  }
-}
 /* end of header css */
 
 /* start of First section banner (16-inch MacBook Pro) css
@@ -311,5 +287,30 @@ body {
 
   .footer-country {
     justify-content: flex-end;
+  }
+}
+@media (max-width: 768px) {
+  .apple-menu-toggle {
+    display: block;
+  }
+
+  .apple-nav-links.left {
+    display: none;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    background-color: #161617cc;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .apple-nav-links.left.open {
+    display: flex;
+  }
+
+  .apple-nav-links.right {
+    gap: 10px;
   }
 }
