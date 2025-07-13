@@ -131,6 +131,7 @@ body {
 	background-size: initial;
 	background-color: #000;
 	background-position: bottom;
+  
 
 }
 .logo-wrapper {
@@ -151,7 +152,30 @@ body {
   padding-left: 15px;
 }
 
+.links-wrapper ul {
+	list-style: none;
+}
 
+.links-wrapper {
+	padding: 15px 0;
+}
+.links-wrapper ul li {
+	display: inline-block;
+	padding-right: 20px;
+}
+.links-wrapper ul li a {
+	color: #06c;
+	text-decoration: none;
+}
+.links-wrapper ul li a:hover {
+	color: #000;
+}
+.links-wrapper ul li a:after {
+  font-family: "FontAwesome";
+  font-weight: 900;
+  content: "\f105";
+  padding-left: 10px;
+}
 
 /* start footerstyle  */
 /* General styles */
