@@ -177,6 +177,62 @@ body {
   padding-left: 10px;
 }
 
+  /* 6th section style */
+
+  /* learn-more style */
+.learn-more .section-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px 0;
+  }
+  
+  .learn-more .section-links ul li a {
+    text-decoration: none;
+    padding-right: 15px;
+    color: #06c;
+  }
+  .learn-more .section-links ul li a:hover {
+    color: black;
+  }
+  
+  .learn-more .section-links ul li a:after {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f105";
+    padding-left: 10px;
+  }
+
+  .left-side {
+    height: 680px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+
+  
+  .right-side {
+    height: 680px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+
+.sixth-section .left-side {
+    background-image: url(../images/home/macbook-pro.jpg);
+    background-position: bottom;
+    background-size: initial;
+  }
+
+  .sixth-section .right-side {
+    background-image: url(../images/home/new-ipad.jpg);
+    background-position: bottom;
+    background-size: initial;
+  }
+  
+
+
 /* start footerstyle  */
 /* General styles */
 .footer-wrapper {
