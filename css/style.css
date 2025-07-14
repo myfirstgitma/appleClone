@@ -85,31 +85,7 @@ body {
 }
 
 /* Responsive: Hide menu links and show toggle button on small screens */
-@media (max-width: 768px) {
-  .apple-menu-toggle {
-    display: block;
-  }
 
-  .apple-nav-links.left {
-    display: none;
-    position: absolute;
-    top: 44px;
-    left: 0;
-    right: 0;
-    background-color: #161617cc;
-    flex-direction: column;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .apple-nav-links.left.open {
-    display: flex;
-  }
-
-  .apple-nav-links.right {
-    gap: 10px;
-  }
-}
 /* end of header css */
 
 /* start of First section banner (16-inch MacBook Pro) css
@@ -129,19 +105,7 @@ body {
 	start of Sixth section – left part (MacBook Pro) css
 
 	start of Sixth section – right part (The new iPad) css*/
-/* Fourth Section Style */
-.pg-1-links ul li {
-  display: inline-block;
-  list-style: none;
-}
-.pg-1-links ul li a {
-  text-decoration: none;
-  padding-right: 20px;
-}
-.pg-1-links ul li a:hover {
-  color: black;
-}
-.pg-1-links ul li a::after {
+ 
   font-family: "FontAwesome";
   content: "\f105";
   padding-left: 5px;
@@ -165,19 +129,29 @@ body {
   font-size: 14px;
   padding-block: 10px;
 }
-
-.right-side-wrapper {
-  text-align: center;
-  background-image: url(../images/home/apple-card.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48.5%;
-  margin: 1% 0.5% 8% 1%;
-  padding: 54px;
-  height: 580px;
+ 
 }
 
+.links-wrapper {
+	padding: 15px 0;
+}
+.links-wrapper ul li {
+	display: inline-block;
+	padding-right: 20px;
+}
+.links-wrapper ul li a {
+	color: #06c;
+	text-decoration: none;
+}
+.links-wrapper ul li a:hover {
+	color: #000;
+}
+.links-wrapper ul li a:after {
+  font-family: "FontAwesome";
+  font-weight: 900;
+  content: "\f105";
+  padding-left: 10px;
+}
 
 /* start footerstyle  */
 /* General styles */
@@ -289,5 +263,30 @@ body {
 
   .footer-country {
     justify-content: flex-end;
+  }
+}
+@media (max-width: 768px) {
+  .apple-menu-toggle {
+    display: block;
+  }
+
+  .apple-nav-links.left {
+    display: none;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    background-color: #161617cc;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .apple-nav-links.left.open {
+    display: flex;
+  }
+
+  .apple-nav-links.right {
+    gap: 10px;
   }
 }
