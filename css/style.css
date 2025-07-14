@@ -129,44 +129,91 @@ body {
 	start of Sixth section – left part (MacBook Pro) css
 
 	start of Sixth section – right part (The new iPad) css*/
+/* Fourth Section Style */
+.pg-1-links ul li {
+  display: inline-block;
+  list-style: none;
+}
+.pg-1-links ul li a {
+  text-decoration: none;
+  padding-right: 20px;
+}
+.pg-1-links ul li a:hover {
+  color: black;
+}
+.pg-1-links ul li a::after {
+  font-family: "FontAwesome";
+  content: "\f105";
+  padding-left: 5px;
+}
+ .section-four {
+  display: flex;
+  justify-content: space-between;
+}
+.left-side-wrapper {
+  text-align: center;
+  background-image: url(../images/home/watch-series-5.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin: 1% 0.5% 8% 1%;
+  padding-top: 54px;
+  height: 580px;
+}
+.right-side-text {
+  font-size: 14px;
+  padding-block: 10px;
+}
+
+.right-side-wrapper {
+  text-align: center;
+  background-image: url(../images/home/apple-card.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 48.5%;
+  margin: 1% 0.5% 8% 1%;
+  padding: 54px;
+  height: 580px;
+}
 /*Fivths Highlight Section */
 .fifth-heghlight-wrapper {
   background: #fff;
 }
 
 .fifth-heghlight-wrapper .left-side-inner-wrapper {
-	height: 580px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	text-align: center;	
-	background-image:  url("../images/home/apple-tv-background.jpg");
-	padding-top: 54px; 
+  height: 580px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  background-image: url("../images/home/apple-tv-background.jpg");
+  padding-top: 54px;
 }
 .fifth-heghlight-wrapper .right-side-inner-wrapper {
-	height: 580px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	text-align: center;	
-	padding-top: 54px;
-	background-image:  url("../images/home/air-pods.jpg"); 
-	color: #fff; 
-	background-size: initial;
-	background-color: #000;
-	background-position: bottom;
-
+  height: 580px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-top: 54px;
+  background-image: url("../images/home/air-pods.jpg");
+  color: #fff;
+  background-size: initial;
+  background-color: #000;
+  background-position: bottom;
 }
 .logo-wrapper {
-	font-size: 40px;
-	font-weight: bold;
+  font-size: 40px;
+  font-weight: bold;
 }
 .tvshow-logo-wraper {
-	padding: 180px 0 150px;
+  padding: 180px 0 150px;
 }
 .watch-more-wrapper a {
-	text-decoration: none;
-	font-size: 0.85em;
+  text-decoration: none;
+  font-size: 0.85em;
 }
 .watch-more-wrapper a:after {
   font-family: "FontAwesome";
@@ -174,8 +221,6 @@ body {
   content: "\f144";
   padding-left: 15px;
 }
-
-
 
 /* start footerstyle  */
 /* General styles */
