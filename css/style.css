@@ -105,8 +105,43 @@ body {
 	start of Sixth section – left part (MacBook Pro) css
 
 	start of Sixth section – right part (The new iPad) css*/
- 
+/*  
 
+fifth section style */
+
+.fifth-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+.fifth-wrapper .left-side-wrapper {
+  background-image: url("../image/images/home/apple-tv-background.jpg");
+}
+.fifth-wrapper .right-side-wrapper {
+  background-image: url("../image/images/home/air-pods.jpg");
+  color: #fff;
+  background-size: initial;
+  background-color: #000;
+  background-position: bottom;
+}
+.logo-wrapper {
+  font-size: 40px;
+  font-weight: bold;
+}
+.tvshow-logo-wraper {
+  padding: 180px 0 200px;
+}
+.watch-more a {
+  text-decoration: none;
+  font-size: 0.85em;
+}
+.watch-more a:after {
+  font-family: "FontAwesome";
+  font-weight: 900;
+  content: "\f144";
+  padding-left: 15px;
+}
+/* end fifth section */
   /* font-family "FontAwesome";{
   content: "\f105";
   padding-left: 5px;
@@ -115,7 +150,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.left-side-wrapper {
+ .left-side-wrapper {
   text-align: center;
   background-image: url(../images/home/watch-series-5.jpg);
   background-position: center;
@@ -125,7 +160,7 @@ body {
   margin: 1% 0.5% 8% 1%;
   padding-top: 54px;
   height: 580px;
-}
+} */
 .right-side-text {
   font-size: 14px;
   padding-block: 10px;
