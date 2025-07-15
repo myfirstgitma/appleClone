@@ -106,10 +106,11 @@ body {
 
 	start of Sixth section – right part (The new iPad) css*/
  
-  font-family: "FontAwesome";
+
+  /* font-family "FontAwesome";{
   content: "\f105";
   padding-left: 5px;
-}
+} */
  .section-four {
   display: flex;
   justify-content: space-between;
@@ -130,7 +131,7 @@ body {
   padding-block: 10px;
 }
  
-}
+
 
 .links-wrapper {
 	padding: 15px 0;
