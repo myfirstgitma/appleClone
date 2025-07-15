@@ -83,8 +83,7 @@ body {
   cursor: pointer;
   margin-right: 16px;
 }
-
-/* Responsive: Hide menu links and show toggle button on small screens */
+ 
 
 /* end of header css */
 
@@ -197,7 +196,7 @@ body {
 
  
  .section-four {
-  display: flex;
+   display: flex;
   justify-content: space-between;
 }
  .left-side-wrapper {
@@ -210,14 +209,12 @@ body {
   margin: 1% 0.5% 8% 1%;
   padding-top: 54px;
   height: 580px;
-} */
+}
 .right-side-text {
   font-size: 14px;
   padding-block: 10px;
-}
+} 
  
-
-
 .links-wrapper {
 	padding: 15px 0;
 }
@@ -237,7 +234,7 @@ body {
   font-weight: 900;
   content: "\f105";
   padding-left: 10px;
-}
+} */
 
   /* 6th section style */
 
