@@ -88,37 +88,125 @@ body {
 
 /* end of header css */
 
-/* start of First section banner (16-inch MacBook Pro) css
+    /* test start */
+    .fifth-wrapper {
+            display: flex;
+            height: 580px;
+            width: 100%;
+        }
 
-	start of Second section banner (iPhone 11 Pro) git css
+        .left-side-wrapper,
+        .right-side-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-	start of Third section banner (iPhone 11) css
+       .fifth-wrapper .left-side-wrapper {
+            background-image: url("../images/home/apple-tv-background.jpg");
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
 
-	start of Fourth section – left part (Watch – Series 5)css
+        .right-side-wrapper {
+            background-image: url("../images/home/air-pods.jpg");
+            background-color: #000;
+            color: #fff;
+        }
 
-	start of Fourth section – right part (Card is here)css
+        .top-logo-wrapper {
+            margin-bottom: 30px;
+        }
 
-	start of Fifth section – left part (tv+) css
+        .logo-wrapper {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.1;
+        }
 
-	start of Fifth section – right part (AirPods Pro) cs
+        .logo-wrapper img {
+            height: 60px;
+            width: auto;
+        }
 
-	start of Sixth section – left part (MacBook Pro) css
+        .tvshow-logo-wraper {
+            margin: 40px 0;
+        }
 
-	start of Sixth section – right part (The new iPad) css*/
+        .tvshow-logo-wraper img {
+            height: 120px;
+            width: auto;
+        }
+
+        .description-wraper {
+            font-size: 20px;
+            font-weight: 400;
+            margin: 20px 0 40px;
+            line-height: 1.2;
+        }
+
+        .links-wrapper ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .links-wrapper a,
+        .watch-more a {
+            text-decoration: none;
+            font-size: 19px;
+            color: #0066cc;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .right-side-wrapper .links-wrapper a {
+            color: #0066cc;
+        }
+
+        .links-wrapper a:hover,
+        .watch-more a:hover {
+            color: #004499;
+        }
+
+        .watch-more a:after {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f144";
+            padding-left: 8px;
+            font-size: 16px;
+        }
+
+        .links-wrapper a:after {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f105";
+            padding-left: 8px;
+            font-size: 16px;
+        }
+    /* test end */
+
+/* fifth section style  */
 /*  
-
-fifth section style */
-
 .fifth-wrapper {
   display: flex;
   justify-content: space-between;
   background: #fff;
 }
 .fifth-wrapper .left-side-wrapper {
-  background-image: url("../image/images/home/apple-tv-background.jpg");
+  background-image: url("../images/home/apple-tv-background.jpg");
 }
 .fifth-wrapper .right-side-wrapper {
-  background-image: url("../image/images/home/air-pods.jpg");
+  background-image: url("../images/home/air-pods.jpg");
   color: #fff;
   background-size: initial;
   background-color: #000;
@@ -140,7 +228,7 @@ fifth section style */
   font-weight: 900;
   content: "\f144";
   padding-left: 15px;
-}
+} */ */
 /* end fifth section */
   /* font-family "FontAwesome";{
   content: "\f105";
