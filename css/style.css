@@ -83,13 +83,10 @@ body {
   cursor: pointer;
   margin-right: 16px;
 }
- 
 
 /* end of header css */
- 
-/*Fivths Highlight Section */
 
- 
+/*Fivths Highlight Section */
 
 /* <!-- ************************** -->
 /* <!-- first section -->
@@ -140,7 +137,7 @@ body {
     background: #fff;
   }
 }
- 
+
 .fifth-heghlight-wrapper .left-side-inner-wrapper {
   height: 580px;
   background-position: center;
@@ -168,130 +165,128 @@ body {
   font-weight: bold;
 }
 .tvshow-logo-wraper {
-  padding: 180px 0 150px;
+  padding: 95px 0 150px;
 }
 .watch-more-wrapper a {
   text-decoration: none;
   font-size: 0.85em;
 }
-    /* fifth section start */
-    .fifth-wrapper {
-            display: flex;
-            height: 580px;
-            width: 100%;
-        }
+/* fifth section start */
+.fifth-wrapper {
+  display: flex;
+  height: 580px;
+  width: 100%;
+}
 
-        .left-side-wrapper,
-        .right-side-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 40px;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+.left-side-wrapper,
+.right-side-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-       .fifth-wrapper .left-side-wrapper {
-            background-image: url("../images/home/apple-tv-background.jpg");
-            background-color: #f5f5f7;
-            color: #1d1d1f;
-        }
+.fifth-wrapper .left-side-wrapper {
+  background-image: url("../images/home/apple-tv-background.jpg");
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+}
 
-        .right-side-wrapper {
-            background-image: url("../images/home/air-pods.jpg");
-            background-color: #000;
-            color: #fff;
-        }
+.right-side-wrapper {
+  background-image: url("../images/home/air-pods.jpg");
+  background-color: #000;
+  color: #fff;
+}
 
-        .top-logo-wrapper {
-            margin-bottom: 30px;
-        }
+.top-logo-wrapper {
+  margin-bottom: 30px;
+}
 
-        .logo-wrapper {
-            font-size: 48px;
-            font-weight: 600;
-            line-height: 1.1;
-        }
+.logo-wrapper {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1;
+}
 
-        .logo-wrapper img {
-            height: 60px;
-            width: auto;
-        }
+.logo-wrapper img {
+  height: 60px;
+  width: auto;
+}
 
-        .tvshow-logo-wraper {
-            margin: 40px 0;
-        }
+.tvshow-logo-wraper {
+  margin: 40px 0;
+}
 
-        .tvshow-logo-wraper img {
-            height: 120px;
-            width: auto;
-        }
+.tvshow-logo-wraper img {
+  height: 120px;
+  width: auto;
+}
 
-        .description-wraper {
-            font-size: 20px;
-            font-weight: 400;
-            margin: 20px 0 40px;
-            line-height: 1.2;
-        }
+.description-wraper {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 20px 0 40px;
+  line-height: 1.2;
+}
 
-        .links-wrapper ul {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-        }
+.links-wrapper ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
 
-        .links-wrapper a,
-        .watch-more a {
-            text-decoration: none;
-            font-size: 19px;
-            color: #0066cc;
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
+.links-wrapper a,
+.watch-more a {
+  text-decoration: none;
+  font-size: 19px;
+  color: #0066cc;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
 
-        .right-side-wrapper .links-wrapper a {
-            color: #0066cc;
-        }
+.right-side-wrapper .links-wrapper a {
+  color: #0066cc;
+}
 
-        .links-wrapper a:hover,
-        .watch-more a:hover {
-            color: #004499;
-        }
+.links-wrapper a:hover,
+.watch-more a:hover {
+  color: #004499;
+}
 
-        .watch-more a:after {
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            content: "\f144";
-            padding-left: 8px;
-            font-size: 16px;
-        }
+.watch-more a:after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f144";
+  padding-left: 8px;
+  font-size: 16px;
+}
 
-        .links-wrapper a:after {
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            content: "\f105";
-            padding-left: 8px;
-            font-size: 16px;
-        }
-    /* fifth section end */
+.links-wrapper a:after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f105";
+  padding-left: 8px;
+  font-size: 16px;
+}
+/* fifth section end */
 
+/* start fourth section css */
 
-    /* start fourth section css */
- 
 /* card right css */
- 
- 
- .section-four {
-   display: flex;
+
+.section-four {
+  display: flex;
   justify-content: space-between;
 }
- .left-side-wrapper {
+.left-side-wrapper {
   text-align: center;
   background-image: url(../images/home/watch-series-5.jpg);
   background-position: center;
@@ -305,89 +300,85 @@ body {
 .right-side-text {
   font-size: 14px;
   padding-block: 10px;
-} 
- 
+}
+
 .links-wrapper {
-	padding: 15px 0;
+  padding: 15px 0;
 }
 .links-wrapper ul li {
-	display: inline-block;
-	padding-right: 20px;
+  display: inline-block;
+  padding-right: 20px;
 }
 .links-wrapper ul li a {
-	color: #06c;
-	text-decoration: none;
- 
+  color: #06c;
+  text-decoration: none;
 }
 .links-wrapper ul li a:hover {
-	color: #000;
+  color: #000;
 }
 .links-wrapper ul li a:after {
   font-family: "FontAwesome";
   font-weight: 900;
   content: "\f105";
   padding-left: 10px;
-} */
+}
+*/
 
   /* 6th section style */
 
   /* learn-more style */
 .learn-more .section-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 20px 0;
-  }
-  
-  .learn-more .section-links ul li a {
-    text-decoration: none;
-    padding-right: 15px;
-    color: #06c;
-  }
-  .learn-more .section-links ul li a:hover {
-    color: black;
-  }
-  
-  .learn-more .section-links ul li a:after {
-    font-family: "FontAwesome";
-    font-weight: 900;
-    content: "\f105";
-    padding-left: 10px;
-  }
+  list-style: none;
+  display: inline-block;
+  padding: 20px 0;
+}
 
-  .left-side {
-    height: 680px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-  }
+.learn-more .section-links ul li a {
+  text-decoration: none;
+  padding-right: 15px;
+  color: #06c;
+}
+.learn-more .section-links ul li a:hover {
+  color: black;
+}
 
-  
-  .right-side {
-    height: 680px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-  }
+.learn-more .section-links ul li a:after {
+  font-family: "FontAwesome";
+  font-weight: 900;
+  content: "\f105";
+  padding-left: 10px;
+}
+
+.left-side {
+  height: 580px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.right-side {
+  height: 580px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .sixth-section .left-side {
-    background-image: url(../images/home/macbook-pro.jpg);
-    background-position: bottom;
-    background-size: initial;
-  }
+  background-image: url(../images/home/macbook-pro.jpg);
+  background-position: center;
+  background-size: initial;
+  height: 580px;
+  background-size: cover;
+}
 
-   
- 
-  .sixth-section .right-side {
-    background-image: url(../images/home/new-ipad.jpg);
-    background-position: bottom;
-    background-size: initial;
-  }
-  
+.sixth-section .right-side {
+  background-image: url(../images/home/new-ipad.jpg);
+  background-position: center;
+  background-size: initial;
+  height: 580px;
+  background-size: cover;
+}
 
-
- 
 /* start footerstyle  */
 /* General styles */
 .footer-wrapper {
