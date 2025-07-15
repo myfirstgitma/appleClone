@@ -88,7 +88,7 @@ body {
 
 /* end of header css */
 
-    /* test start */
+    /* fifth section start */
     .fifth-wrapper {
             display: flex;
             height: 580px;
@@ -193,47 +193,9 @@ body {
             padding-left: 8px;
             font-size: 16px;
         }
-    /* test end */
+    /* fifth section end */
 
-/* fifth section style  */
-/*  
-.fifth-wrapper {
-  display: flex;
-  justify-content: space-between;
-  background: #fff;
-}
-.fifth-wrapper .left-side-wrapper {
-  background-image: url("../images/home/apple-tv-background.jpg");
-}
-.fifth-wrapper .right-side-wrapper {
-  background-image: url("../images/home/air-pods.jpg");
-  color: #fff;
-  background-size: initial;
-  background-color: #000;
-  background-position: bottom;
-}
-.logo-wrapper {
-  font-size: 40px;
-  font-weight: bold;
-}
-.tvshow-logo-wraper {
-  padding: 180px 0 200px;
-}
-.watch-more a {
-  text-decoration: none;
-  font-size: 0.85em;
-}
-.watch-more a:after {
-  font-family: "FontAwesome";
-  font-weight: 900;
-  content: "\f144";
-  padding-left: 15px;
-} */ */
-/* end fifth section */
-  /* font-family "FontAwesome";{
-  content: "\f105";
-  padding-left: 5px;
-} */
+ 
  .section-four {
   display: flex;
   justify-content: space-between;
