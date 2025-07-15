@@ -86,7 +86,111 @@ body {
  
 
 /* end of header css */
+ gitPractice
+/* start of First section banner (16-inch MacBook Pro) css
 
+	start of Second section banner (iPhone 11 Pro) git css
+
+	start of Third section banner (iPhone 11) css
+
+	start of Fourth section – left part (Watch – Series 5)css
+
+	start of Fourth section – right part (Card is here)css
+
+	start of Fifth section – left part (tv+) css
+
+	start of Fifth section – right part (AirPods Pro) cs
+
+	start of Sixth section – left part (MacBook Pro) css
+
+	start of Sixth section – right part (The new iPad) css*/
+/*Fivths Highlight Section */
+
+ 
+
+/* <!-- ************************** -->
+/* <!-- first section -->
+<!-- ************************** --> */
+.root {
+  height: 580px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fafafa;
+}
+.text-center {
+  text-align: center;
+}
+.root {
+  padding: 20px;
+}
+
+.title {
+  font-size: 30px;
+}
+.trailer ul li a:after {
+  font-family: "FontAwesome";
+  font-weight: 980;
+  content: "\f105";
+  padding-left: 20px;
+}
+.trailer ul li {
+  display: inline-block;
+}
+.text-decoration-none:hover {
+  opacity: 0.7;
+}
+
+/* <!-- ************************** -->
+<!-- second section -->
+<!-- ************************** --> */
+.iphone-11-pro {
+  background-image: url(../images/home/iphone11-pro-bg.jpg);
+  color: #fff;
+}
+/* <!-- ************************** -->
+<!-- third section -->
+<!-- ************************** --> */
+.iphone-11 {
+  background-image: url(../images/home/iphone11-bg.jpg);
+  .fifth-heghlight-wrapper {
+    background: #fff;
+  }
+}
+ 
+.fifth-heghlight-wrapper .left-side-inner-wrapper {
+  height: 580px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  background-image: url("../images/home/apple-tv-background.jpg");
+  padding-top: 54px;
+}
+.fifth-heghlight-wrapper .right-side-inner-wrapper {
+  height: 580px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-top: 54px;
+  background-image: url("../images/home/air-pods.jpg");
+  color: #fff;
+  background-size: initial;
+  background-color: #000;
+  background-position: bottom;
+}
+.logo-wrapper {
+  font-size: 40px;
+  font-weight: bold;
+}
+.tvshow-logo-wraper {
+  padding: 180px 0 150px;
+}
+.watch-more-wrapper a {
+  text-decoration: none;
+  font-size: 0.85em;
+ 
     /* fifth section start */
     .fifth-wrapper {
             display: flex;
@@ -225,6 +329,7 @@ body {
 .links-wrapper ul li a {
 	color: #06c;
 	text-decoration: none;
+ 
 }
 .links-wrapper ul li a:hover {
 	color: #000;
@@ -284,6 +389,8 @@ body {
     background-size: initial;
   }
 
+   
+ 
   .sixth-section .right-side {
     background-image: url(../images/home/new-ipad.jpg);
     background-position: bottom;
@@ -292,6 +399,7 @@ body {
   
 
 
+ 
 /* start footerstyle  */
 /* General styles */
 .footer-wrapper {
