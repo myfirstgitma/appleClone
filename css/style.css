@@ -86,24 +86,7 @@ body {
  
 
 /* end of header css */
- gitPractice
-/* start of First section banner (16-inch MacBook Pro) css
-
-	start of Second section banner (iPhone 11 Pro) git css
-
-	start of Third section banner (iPhone 11) css
-
-	start of Fourth section – left part (Watch – Series 5)css
-
-	start of Fourth section – right part (Card is here)css
-
-	start of Fifth section – left part (tv+) css
-
-	start of Fifth section – right part (AirPods Pro) cs
-
-	start of Sixth section – left part (MacBook Pro) css
-
-	start of Sixth section – right part (The new iPad) css*/
+ 
 /*Fivths Highlight Section */
 
  
@@ -190,7 +173,7 @@ body {
 .watch-more-wrapper a {
   text-decoration: none;
   font-size: 0.85em;
- 
+}
     /* fifth section start */
     .fifth-wrapper {
             display: flex;
