@@ -315,49 +315,10 @@ body {
   margin: 0 auto;
   padding: 10px;
 }
+/* end fourth section */
+
 /* card right css */
-
-/* .section-four {
-  display: flex;
-  justify-content: space-between;
-}
-.left-side-wrapper {
-  text-align: center;
-  background-image: url(../images/home/watch-series-5.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  margin: 1% 0.5% 8% 1%;
-  padding-top: 54px;
-  height: 580px;
-}
-.right-side-text {
-  font-size: 14px;
-  padding-block: 10px;
-}
-
-.links-wrapper {
-  padding: 15px 0;
-}
-.links-wrapper ul li {
-  display: inline-block;
-  padding-right: 20px;
-}
-.links-wrapper ul li a {
-  color: #06c;
-  text-decoration: none;
-}
-.links-wrapper ul li a:hover {
-  color: #000;
-}
-.links-wrapper ul li a:after {
-  font-family: "FontAwesome";
-  font-weight: 900;
-  content: "\f105";
-  padding-left: 10px;
-} */
-*/
+ 
 
   /* 6th section style */
 
