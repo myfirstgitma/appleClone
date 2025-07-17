@@ -292,7 +292,11 @@ body {
   text-align: center;
   width: 48.5%;
   margin-top: 12px;
-  padding-top: 54px;
+  padding-top:80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .fourth-wrapper .left-side-wrapper {
   background-image: url("../images/home/watch-series-5.jpg");
@@ -305,7 +309,12 @@ body {
   text-align: center;
   width: 48.5%;
   margin-top: 12px;
-  padding-top: 54px;
+  padding: top 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: black
 }
 .fourth-wrapper .right-side-wrapper {
   background-image: url("../images/home/apple-card.jpg");
@@ -313,7 +322,8 @@ body {
 .description-wraper {
   width: 430px;
   margin: 0 auto;
-  padding: 10px;
+  padding:20px 10px;
+  line-height: 1.4
 }
 /* end fourth section */
 
