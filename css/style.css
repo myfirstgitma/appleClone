@@ -165,7 +165,7 @@ body {
   font-weight: bold;
 }
 .tvshow-logo-wraper {
-  padding: 95px 0 150px;
+  padding: 100px 0 150px;
 }
 .watch-more-wrapper a {
   text-decoration: none;
@@ -208,7 +208,12 @@ body {
 .top-logo-wrapper {
   margin-bottom: 30px;
 }
-
+.description-wraper{
+  color: white
+}
+.logo-wrapper{
+  color: white;
+}
 .logo-wrapper {
   font-size: 48px;
   font-weight: 600;
