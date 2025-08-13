@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Binding Methods</title>
+</head>
+<body>
+    <a href="https://example.com" id="myLink">Don't go there!</a>
+
+
+    <form onsubmit="return handleSubmit()">
+        <input type="text" required />
+        <button type="submit">Submit</button>
+      </form>
+      
+      
+        <h2>Event Playground</h2>
+      
+        <div id="playArea">Hover or Click</div>
+      
+        <input type="text" id="nameInput" placeholder="Type your name" />
+        <p id="greeting"></p>
+      
+        <form id="colorForm">
+          <label>Pick a color: <input type="color" id="colorPicker" /></label>
+          <button type="submit">Apply</button>
+        </form>
+      
+      
+
+  <h2>1. Inline Event Handler</h2>
+  <button onclick="alert('Inline: Button clicked!')">Click Me (Inline)</button>
+
+  <h2>2. DOM Property Assignment</h2>
+  <button id="domBtn">Click Me (DOM Property)</button>
+
+  <h2>3. addEventListener</h2>
+  <button id="listenerBtn">Click Me (addEventListener)</button>
+
+  <script>
+ function handleSubmit() {
+    alert("Form submitted!");
+    return false; // Prevents actual submission
+  }
+
+
+
+ const playArea = document.getElementById("playArea");
+    const nameInput = document.getElementById("nameInput");
+    const greeting = document.getElementById("greeting");
+    const colorForm = document.getElementById("colorForm");
+    const colorPicker = document.getElementById("colorPicker");
+
+    // Mouse events
+    playArea.addEventListener("mouseover", () => {
+      playArea.style.transform = "scale(1.1)";
+    });
+
+playArea.addEventListener("mouseout", () => {
+      playArea.style.transform = "scale(1)";
+    });
+
+    playArea.addEventListener("click", () => {
+      alert("You clicked the play area!");
+    });
+
+    // Keyboard event
+    nameInput.addEventListener("keyup", () => {
+      greeting.textContent = `Hello, ${nameInput.value}!`;
+    });
+
+    // Form submit event
+    colorForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      playArea.style.backgroundColor = colorPicker.value;
+    });
+
+
+
+
+
+    // DOM Property Assignment
+    const domBtn = document.getElementById("domBtn");
+    domBtn.onclick = function () {
+      alert("DOM Property: Button clicked!");
+    };
+
+    // addEventListener
+    const listenerBtn = document.getElementById("listenerBtn");
+    listenerBtn.addEventListener("click", () => {
+      alert("addEventListener: Button clicked!");
+    });
+
+    document.getElementById("myLink").addEventListener("click", function(e) {
+    e.preventDefault(); // Stops the browser from navigating
+    alert("Default action prevented!");
+  });
+
+  </script>
+</body>
+</html>

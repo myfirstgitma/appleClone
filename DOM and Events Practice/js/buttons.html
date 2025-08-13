@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive UI</title>
+  <style>
+    body {
+      transition: background-color 0.3s ease;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      margin-right: 15px;
+      font-weight: bold;
+    }
+    #counter {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    button {
+      font-size: 20px;
+      margin: 5px;
+      padding: 5px 10px;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .hidden {
+      display: none;
+    }
+    #message {
+      font-size: 20px;
+      color: green;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔘 Radio Buttons for Theme Selection -->
+  <h3>Select Theme Color</h3>
+  <label><input type="radio" name="theme" value="#5ab5ff"> Blue</label>
+  <label><input type="radio" name="theme" value="#03c4a1"> Green</label>
+  <label><input type="radio" name="theme" value="#c300ff"> Purple</label>
+  <label><input type="radio" name="theme" value="#FFEB3B"> Sunny</label>
+  <label><input type="radio" name="theme" value="#000"> Night Mode</label>
+  <label><input type="radio" name="theme" value="#fff"> White</label>
+
+  <!-- 🔢 Counter -->
+  <div id="counter">0</div>
+  <button id="minus">−</button>
+  <button id="plus">+</button>
+
+  <!-- 🔐 Login Form -->
+  <form id="loginForm">
+    <h3>Login</h3>
+    <input type="text" id="fullname" placeholder="User Full Name" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="message" class="hidden">Form submitted</div>
+
+  <script>
+    // 🎨 Theme Change
+    document.querySelectorAll('input[name="theme"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.body.style.backgroundColor = btn.value;
+      });
+    });
+
+    // 🔢 Counter Logic
+    let count = 0;
+    const counterEl = document.getElementById('counter');
+    document.getElementById('plus').addEventListener('click', () => {
+      if (count < 20) {
+        count++;
+        counterEl.textContent = count;
+      }
+    });
+    document.getElementById('minus').addEventListener('click', () => {
+      if (count > 0) {
+        count--;
+        counterEl.textContent = count;
+      }
+    });
+
+    // 🔐 Login Validation
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fullname = document.getElementById('fullname');
+      const password = document.getElementById('password');
+      let valid = true;
+
+      if (!fullname.value) {
+        fullname.style.backgroundColor = 'pink';
+        valid = false;
+      } else {
+        fullname.style.backgroundColor = '';
+      }
+
+      if (!password.value) {
+        password.style.backgroundColor = 'pink';
+        valid = false;
+      } else {
+        password.style.backgroundColor = '';
+      }
+
+      if (valid) {
+        document.getElementById('message').classList.remove('hidden');
+        document.getElementById('loginForm').classList.add('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>

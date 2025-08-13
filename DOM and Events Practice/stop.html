@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>preventDefault Demo</title>
+</head>
+<body>
+  <h2>1. Prevent Link Navigation</h2>
+  <a href="https://example.com" id="link">Don't go here!</a>
+
+  <h2>2. Prevent Form Submission</h2>
+  <form id="myForm">
+    <input type="text" placeholder="Type something..." required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>3. Prevent Checkbox Toggle</h2>
+  <label>
+    <input type="checkbox" id="myCheckbox" />
+    Can't check me!
+  </label>
+
+  <script>
+    // Prevent link navigation
+    document.getElementById("link").addEventListener("click", function(e) {
+      e.preventDefault();
+      alert("Navigation prevented!");
+    });
+
+    // Prevent form submission
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Form submission prevented!");
+    });
+
+    // Prevent checkbox toggle
+    document.getElementById("myCheckbox").addEventListener("click", function(e) {
+      e.preventDefault();
+      alert("Checkbox toggle prevented!");
+    });
+  </script>
+</body>
+</html>

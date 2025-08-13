@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>HTMLCollection vs NodeList</title>
+</head>
+<body>
+  <div class="example">One</div>
+  <div class="example">Two</div>
+  <div class="example">Three</div>
+
+  <script>
+    // Get elements using getElementsByClassName (HTMLCollection - live)
+    const htmlCollection = document.getElementsByClassName('example');
+
+    // Get elements using querySelectorAll (NodeList - static)
+    const nodeList = document.querySelectorAll('.example');
+
+    console.log('--- Initial Content ---');
+    console.log('HTMLCollection:', htmlCollection.length); // 3
+    console.log('NodeList:', nodeList.length); // 3
+
+    // Add another .example div to the DOM
+    const newDiv = document.createElement('div');
+    newDiv.className = 'example';
+    newDiv.textContent = 'Four';
+    document.body.appendChild(newDiv);
+
+    console.log('--- After Adding New Element ---');
+    console.log('HTMLCollection (live):', htmlCollection.length); // 4 ✅ updates live
+    console.log('NodeList (static):', nodeList.length); // 3 ❌ does not update
+
+    // Try using forEach
+    try {
+      htmlCollection.forEach(el => console.log('HTMLCollection item:', el.textContent));
+    } catch {
+      console.log('HTMLCollection does NOT support forEach directly ❌');
+    }
+
+    nodeList.forEach(el => console.log('NodeList item:', el.textContent)); // ✅ works
+  </script>
+</body>
+</html>
+💡 Key Takeaways from This Demo
+- 🪄 HTMLCollection updates automatically when the DOM changes.
+- 📸 NodeList is a static snapshot of the DOM at the time it was queried.
+- 🛠️ forEach() works with NodeList but not with HTMLCollection directly --> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NodeList Demo</title>
+</head>
+<body>
+  <p class="note">First note</p>
+  <p class="note">Second note</p>
+
+  <script>
+    // Get all elements with class "note" at this moment
+    const notes = document.querySelectorAll('.note');
+    console.log('Initial NodeList count:', notes.length); // 👉 Outputs: 2
+
+    // Add a new matching element after the NodeList is created
+    const newNote = document.createElement('p');
+    newNote.className = 'note';
+    newNote.textContent = 'Third note';
+    document.body.appendChild(newNote);
+
+    // Check if NodeList updated
+    console.log('After DOM change - NodeList count:', notes.length); // 👉 Still 2 ❌
+
+    // Run querySelectorAll again to get updated NodeList
+    const updatedNotes = document.querySelectorAll('.note');
+    console.log('Updated NodeList count:', updatedNotes.length); // 👉 Now 3 ✅
+  </script>
+</body>
+</html>

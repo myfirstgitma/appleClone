@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Puppy Lover</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+    }
+
+    header {
+      background-color: #ff6f61;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .section1,
+    .section2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 10px;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+
+    .image-box,
+    .img-box {
+      width: 90%;
+      max-width: 300px;
+      overflow: hidden;
+    }
+
+    .image-box img,
+    .img-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .middle-box {
+      background-color: red;
+      color: white;
+      padding: 20px;
+      font-size: 1.5em;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    @media (min-width: 780px) {
+      .section1 {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .section1 .middle-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        padding: 30px 60px;
+        font-size: 2em;
+      }
+
+      .section2 {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Puppy Lover</header>
+
+  <div class="hero">
+    <img src="./mages/banner-puppies.jpg" alt="Puppy Banner">
+  </div>
+
+  <section class="section1">
+    <div class="image-box">
+      <img src="./mages/puppy-1.jpg" alt="Puppy 1">
+    </div>
+    <div class="image-box">
+      <img src="./mages/puppy-2.jpg" alt="Puppy 2">
+    </div>
+    <div class="middle-box">
+      <p>Love Dogs</p>
+    </div>
+  </section>
+
+  <section class="section2">
+    <div class="img-box">
+      <img src="./mages/puppy-3.jpg" alt="Puppy 3">
+    </div>
+    <div class="img-box">
+      <img src="./mages/puppy-4.jpg" alt="Puppy 4">
+    </div>
+  </section>
+
+</body>
+</html>

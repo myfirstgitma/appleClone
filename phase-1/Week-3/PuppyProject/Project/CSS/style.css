@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+/* header*/
+header,
+h1 {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 7px;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+}
+img{
+  width: 100%;
+  display: block;
+}
+/*banner*/
+
+.banner {
+ width: 100%;
+ height: auto;
+}
+/*.banner1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}*/
+img{
+  width: 100%;
+}
+/*puppys-section*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 25px auto;
+
+}
+
+.puppy-1 img {
+  width: 100%;
+  height: auto;
+
+  padding: 15px;
+}
+
+.missingpuppy {
+  background-color: brown;
+  color: rgb(2, 1, 1);
+  font-size: 43px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 300px;
+  height: 310px;
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.pup1 {
+  margin: 7px;
+}
+
+.pup {
+  margin: 0px;
+}
+h2 {
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-shadow: 1px 1px gray;
+}
+/*footer*/
+footer {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 70px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+@media (min-width: 780px) {
+  
+  .puppy-1{
+    max-width: 100%;
+    display: flex;
+  }
+  
+}

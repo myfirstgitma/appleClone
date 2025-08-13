@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My jQuery To-Do List</title>
+    <style>
+      .completed {
+        text-decoration: line-through;
+        color: gray;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+      .special{
+        color: green;
+      }
+    </style>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="myElement">
+        <strong>Hello</strong> world!
+      </div>
+    <button id="toggleBtn">Toggle Highlight</button>
+    <div id="myElement">Watch me change!</div>
+    <h2>To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Add a new task" />
+    <button id="addTask">Add</button>
+    <ul id="taskList"></ul>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt velit
+      exercitationem voluptates repellat rem aliquam assumenda inventore debitis
+      temporibus, quam ullam eum quod voluptatem facilis natus eligendi aperiam
+      saepe eaque!
+    </p>
+    <p class="special">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem officiis accusantium a iure similique quia consectetur, temporibus sunt consequatur soluta, vitae libero odit aut harum ut quod reiciendis dolorum. Labore?</p>
+    <script>
+        var html = $('#myElement').html();
+        // html will be: "<strong>Hello</strong> world!"
+      $("p").css("color", "red").find(".special").css("color", "green");
+      $("#toggleBtn").click(function () {
+        $("#myElement").toggleClass("highlight");
+      });
+      $(document).ready(function () {
+        $("#addTask").click(function () {
+          const taskText = $("#taskInput").val().trim();
+          if (taskText !== "") {
+            $("#taskList").append(
+              `<li>
+              ${taskText} 
+              <button class="complete">✔</button> 
+              <button class="delete">✖</button>
+            </li>`
+            );
+            $("#taskInput").val("");
+          }
+        });
+
+        $("#taskList").on("click", ".complete", function () {
+          $(this).parent().toggleClass("completed");
+        });
+
+        $("#taskList").on("click", ".delete", function () {
+          $(this).parent().remove();
+        });
+      });
+    </script>
+  </body>
+</html>

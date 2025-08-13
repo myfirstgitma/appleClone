@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name - Personal Portfolio</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Inter", sans-serif;
+        padding-top: 60px; /* Adjusted for the new top bar height */
+        scroll-behavior: smooth;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+      }
+
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      .rounded-custom {
+        border-radius: 0.75rem;
+      }
+
+      /* Top Bar (replaces old navbar styling context) */
+      .top-bar {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 1rem; /* Adjust padding for the top bar */
+      }
+
+      .top-bar .navbar-brand {
+        /* Styling for brand in top bar */
+        font-weight: 700;
+        color: #343a40 !important;
+      }
+      .top-bar .navbar-toggler {
+        border: none;
+      }
+      .top-bar .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      /* Offcanvas Sidebar */
+      .offcanvas-header {
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      .offcanvas-title {
+        font-weight: 700;
+      }
+
+      .offcanvas-body .nav-link {
+        font-weight: 500;
+        color: #495057 !important;
+        padding: 0.65rem 1rem; /* Padding for sidebar links */
+        margin-bottom: 0.25rem; /* Space between links */
+        border-radius: 0.5rem; /* Rounded corners for links */
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+
+      .offcanvas-body .nav-link:hover,
+      .offcanvas-body .nav-link.active {
+        color: #007bff !important;
+        background-color: #e9ecef; /* Light background for hover/active */
+      }
+
+      /* Hero Section */
+      #home {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2ViJTIwZGV2ZWxvcGVyfGVufDB8fDB8fHww");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        height: calc(100vh - 60px); /* Adjusted for new top bar height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      #home h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #home p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+
+      /* About Section */
+      #about img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border: 5px solid #e9ecef;
+      }
+
+      /* Projects Section */
+      .card {
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+      .card-img-top {
+        /* Ensure top corners are rounded if image is directly inside card */
+        border-top-left-radius: 0.75rem;
+        border-top-right-radius: 0.75rem;
+      }
+
+      .card-title {
+        color: #007bff;
+      }
+
+      /* Contact Section */
+      #contact {
+        background-color: #f8f9fa;
+      }
+      #contact .form-control {
+        border-radius: 0.5rem;
+      }
+      #contact .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+      }
+      #contact .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #343a40;
+        color: white;
+      }
+
+      /* Custom Message Box for Form Submission */
+      #form-message-box {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 25px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1050;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      #form-message-box.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #home h1 {
+          font-size: 2.5rem;
+        }
+        #home p {
+          font-size: 1rem;
+        }
+        .section-padding {
+          padding: 60px 0;
+        }
+      }
+      @media (min-width: 992px) {
+        /* Ensure offcanvas doesn't push content on larger screens if it were a permanent sidebar */
+        /* Styles for a permanent sidebar on larger screens could go here if desired */
+        /* For now, it's a toggleable offcanvas on all screen sizes */
+      }
+    </style>
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#sidebarNavMenu"
+    data-bs-offset="70"
+  >
+    <nav class="navbar fixed-top top-bar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#home">Your Name</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebarNav"
+          aria-controls="sidebarNav"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="sidebarNav"
+      aria-labelledby="sidebarNavLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarNavLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-column" id="sidebarNavMenu">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home" data-bs-dismiss="offcanvas"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" data-bs-dismiss="offcanvas"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects" data-bs-dismiss="offcanvas"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" data-bs-dismiss="offcanvas"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="home">
+      <div class="container">
+        <h1>Hello, I'm [Your Name]</h1>
+      
+        <a href="#projects" class="btn btn-primary btn-lg rounded-custom"
+          >View My Work</a
+        >
+        <a
+          href="#contact"
+          class="btn btn-outline-light btn-lg rounded-custom ms-2"
+          >Get In Touch</a
+        >
+      </div>
+    </section>
+
+    <section id="about" class="section-padding">
+      <div class="container">
+        <h2 class="text-center mb-5">About Me</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-4 text-center mb-4 mb-lg-0">
+            <img
+              src="https://placehold.co/400x400/007bff/white?text=Your+Photo"
+              alt="Your Name"
+              class="img-fluid rounded-circle shadow-sm"
+            />
+          </div>
+          <div class="col-lg-8">
+            <p class="lead">
+              Hello! I'm [Your Name], a [Your Profession/Title] with a strong
+              passion for [Your Key Interest 1] and [Your Key Interest 2]. I
+              enjoy creating [Type of things you create/solve] and continuously
+              learning new technologies.
+            </p>
+            <p>
+              With [X] years of experience in [Your Field], I have developed a
+              strong skill set in [Skill 1], [Skill 2], and [Skill 3]. I am
+              proficient in tools like [Tool 1], [Tool 2], and always eager to
+              take on new challenges that allow me to grow and contribute
+              effectively.
+            </p>
+            <p>
+              When I'm not coding or designing, you can find me [Your Hobby 1]
+              or [Your Hobby 2]. I believe in the power of collaboration and am
+              always open to discussing new projects and opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-padding bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">My Projects</h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 rounded-custom">
+              <img
+                src="https://placehold.co/600x400/343a40/ffffff?text=Project+1"
+                class="card-img-top"
+                alt="Project 1 Thumbnail"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Project Title 1</h5>
+                <p class="card-text flex-grow-1">
+                  A brief description of your project. Highlight the key
+                  features and technologies used. For example: A web application
+                  built with React and Node.js for task management.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary rounded-custom mt-auto"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 rounded-custom">
+              <img
+                src="https://placehold.co/600x400/007bff/ffffff?text=Project+2"
+                class="card-img-top"
+                alt="Project 2 Thumbnail"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Project Title 2</h5>
+                <p class="card-text flex-grow-1">
+                  Another project description. Maybe this one uses Python and
+                  Django, or it's a mobile app developed with Swift or Kotlin.
+                  Be specific!
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary rounded-custom mt-auto"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 rounded-custom">
+              <img
+                src="https://placehold.co/600x400/28a745/ffffff?text=Project+3"
+                class="card-img-top"
+                alt="Project 3 Thumbnail"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Project Title 3</h5>
+                <p class="card-text flex-grow-1">
+                  Describe your third project. What problem did it solve? What
+                  was your role? What technologies were involved?
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary rounded-custom mt-auto"
+                  target="_blank"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <h2 class="text-center mb-5">Get In Touch</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <form id="contactForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Your Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="john.doe@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  placeholder="Regarding your portfolio"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Your message here..."
+                  required
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg rounded-custom"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+            <div class="text-center mt-4">
+              <p>Or connect with me via:</p>
+              <a
+                href="#"
+                class="btn btn-outline-dark btn-lg rounded-custom m-1"
+                target="_blank"
+                title="LinkedIn"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-linkedin"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                  />
+                </svg>
+                LinkedIn</a
+              >
+              <a
+                href="#"
+                class="btn btn-outline-dark btn-lg rounded-custom m-1"
+                target="_blank"
+                title="GitHub"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-github"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                  />
+                </svg>
+                GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-4 text-center">
+      <div class="container">
+        <p class="mb-0">
+          &copy; <span id="currentYear"></span> Your Name. All Rights Reserved.
+        </p>
+        <p class="mb-0 small">
+          Designed with
+          <a href="https://getbootstrap.com/" target="_blank" class="text-white"
+            >Bootstrap</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <div id="form-message-box">Message Sent!</div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      // Activate Bootstrap scrollspy on the main nav element
+      // const mainNav = document.body.querySelector('.navbar'); // Old selector
+      const scrollSpyTarget = document.getElementById("sidebarNavMenu"); // Target the UL in offcanvas
+      if (scrollSpyTarget) {
+        new bootstrap.ScrollSpy(document.body, {
+          target: "#sidebarNavMenu",
+          offset: 70, // Adjust this offset based on your top bar's height and content structure
+        });
+      }
+
+      // Contact Form Submission Handler
+      const contactForm = document.getElementById("contactForm");
+      const formMessageBox = document.getElementById("form-message-box");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent actual form submission
+
+          if (this.checkValidity()) {
+            console.log("Form submitted with the following data:");
+            console.log("Name:", document.getElementById("name").value);
+            console.log("Email:", document.getElementById("email").value);
+            console.log("Subject:", document.getElementById("subject").value);
+            console.log("Message:", document.getElementById("message").value);
+
+            formMessageBox.textContent =
+              "Thank you! Your message has been sent (simulated).";
+            formMessageBox.style.backgroundColor = "#28a745";
+            formMessageBox.classList.add("show");
+
+            setTimeout(() => {
+              formMessageBox.classList.remove("show");
+            }, 3000);
+
+            this.reset();
+            this.classList.remove("was-validated");
+          } else {
+            formMessageBox.textContent =
+              "Please fill out all required fields correctly.";
+            formMessageBox.style.backgroundColor = "#dc3545";
+            formMessageBox.classList.add("show");
+            setTimeout(() => {
+              formMessageBox.classList.remove("show");
+            }, 3000);
+          }
+          this.classList.add("was-validated");
+        });
+      }
+    </script>
+  </body>
+</html>

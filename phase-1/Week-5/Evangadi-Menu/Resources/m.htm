@@ -1,0 +1,362 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Developer Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --bg-color: #000; /* Night in Space */
+            --text-color: #fff;
+            --accent-color: #00bfff;
+            --secondary-bg: #111;
+        }
+        body.light-mode {
+            --bg-color: #fff; /* Day on Earth */
+            --text-color: #000;
+            --accent-color: #ff4500;
+            --secondary-bg: #f8f9fa;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Navbar */
+        .navbar {
+            transition: background-color 0.3s;
+            background-color: var(--secondary-bg);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-color) !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        /* Starfield Background */
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--bg-color);
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 1s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        /* Landing Page */
+        #landing {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        /* About Section */
+        #about {
+            padding: 50px 0;
+        }
+        .satellite {
+            animation: float 3s ease-in-out infinite;
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        /* Skills Galaxy */
+        #skills {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .orbit-map {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: yellow;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .planet {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            animation: orbit 10s linear infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 12px;
+            text-align: center;
+        }
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        .planet:nth-child(2) { animation-duration: 15s; transform: rotate(0deg) translateX(200px) rotate(0deg); }
+        .planet:nth-child(3) { animation-duration: 20s; transform: rotate(0deg) translateX(250px) rotate(0deg); }
+        /* Projects Constellation */
+        #projects {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .constellation {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+        .project-star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            animation: twinkle 1s infinite alternate;
+        }
+        /* Blog Meteorites */
+        #blog {
+            padding: 50px 0;
+        }
+        .meteorite {
+            position: relative;
+            animation: meteor 5s linear infinite;
+            background: var(--accent-color);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        @keyframes meteor {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100vw); }
+        }
+        /* Contact Space Station */
+        #contact {
+            padding: 50px 0;
+        }
+        .contact-form {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+        .radar {
+            position: relative;
+        }
+        .radar::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent-color) 10%, transparent 10%);
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1);
+            animation: radar-wave 2s infinite;
+            z-index: -1;
+        }
+        @keyframes radar-wave {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.5; }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+        }
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        /* Dark/Light Toggle */
+        #toggle-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#landing">Your Name</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark/Light Mode Toggle -->
+    <button id="toggle-mode" class="btn btn-primary">Night in Space</button>
+
+    <!-- Starfield Background -->
+    <div id="starfield"></div>
+
+    <!-- Landing Page -->
+    <section id="landing">
+        <h1>Your Name</h1>
+        <p>Exploring the Full Stack Universe</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <div class="satellite row">
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/150" alt="Your Photo" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-md-8">
+                <h2>About Me</h2>
+                <p>Your bio goes here. I'm a full stack developer passionate about building scalable web applications.</p>
+                <p>Mission Statement: To boldly code where no developer has coded before.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Galaxy -->
+    <section id="skills" class="container">
+        <h2>Skills Galaxy</h2>
+        <div class="orbit-map">
+            <div class="sun"></div>
+            <div class="planet" style="background: blue;">React</div>
+            <div class="planet" style="background: green;">Node.js</div>
+            <div class="planet" style="background: purple;">MongoDB</div>
+        </div>
+    </section>
+
+    <!-- Projects Constellation -->
+    <section id="projects" class="container">
+        <h2>Projects Constellation</h2>
+        <div class="constellation">
+            <div class="project-star" style="top: 10%; left: 20%;" data-bs-toggle="modal" data-bs-target="#projectModal1"></div>
+            <div class="project-star" style="top: 30%; left: 50%;" data-bs-toggle="modal" data-bs-target="#projectModal2"></div>
+        </div>
+        <!-- Modal Example -->
+        <div class="modal fade" id="projectModal1" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background: var(--secondary-bg); color: var(--text-color);">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Project 1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Tech: React, Node.js</p>
+                        <a href="#">Live Demo</a><br>
+                        <a href="#">GitHub Repo</a><br>
+                        <img src="https://via.placeholder.com/300" alt="Screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Contact Space Station -->
+    <section id="contact" class="container">
+        <h2>Contact Space Station</h2>
+        <form class="contact-form">
+            <div class="mb-3 radar">
+                <input type="text" placeholder="Name" class="form-control" required>
+            </div>
+            <div class="mb-3 radar">
+                <input type="email" placeholder="Email" class="form-control" required>
+            </div>
+            <div class="mb-3 radar">
+                <textarea placeholder="Message" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <div class="social-links mt-3 text-center">
+            <a href="mailto:your.email@example.com">Email</a> |
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Generate Stars
+        function createStars() {
+            const starfield = document.getElementById('starfield');
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                starfield.appendChild(star);
+            }
+        }
+        createStars();
+
+        // Toggle Mode
+        const toggleButton = document.getElementById('toggle-mode');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            toggleButton.textContent = document.body.classList.contains('light-mode') ? 'Night in Space' : 'Day on Earth';
+        });
+
+        // Form Submit (Placeholder)
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message Sent!');
+        });
+    </script>
+</body>
+</html>
